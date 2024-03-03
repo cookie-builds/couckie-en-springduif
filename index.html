@@ -19,8 +19,8 @@
       function moveButton() {
         document.getElementById('noButton').style.position = 'absolute';
         document.getElementById('yesButton').style.marginRight = '8.25rem';
-        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 48;
-        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth - 10) + 5;
+        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight - 10) + 5;
         document.getElementById('noButton').style.left = `${x}px`;
         document.getElementById('noButton').style.top = `${y}px`;
       }
