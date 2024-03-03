@@ -1,0 +1,47 @@
+body {
+  background-color: black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Madimi One;
+}
+
+img {
+  height: 50%;
+}
+
+h1 {
+  color: lightblue;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  background-color: lightblue;
+  border: #a6a1ff 2px solid;
+  font-size: 1.75rem;
+  padding: 1rem 2.5rem;
+  border-radius: 0.5rem;
+  transition: 0.1s transform;
+  font-family: Madimi One;
+  font-weight: 100;
+}
+
+button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+#noButton {
+  position: relative;
+  left: 0;
+}

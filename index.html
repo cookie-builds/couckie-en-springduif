@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+  <title>Springduif</title>
+</head>
+<body>
+  <h1>Do you wanna go to the ball with me?</h1>
+  <img src="./pigeon.gif" alt="Cute animated illustration">
+  <div class="button-group">
+    <button id="yesButton" onclick="nextPage()">Yes</button>
+    <button id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+    <script>
+      function moveButton() {
+        document.getElementById('noButton').style.position = 'absolute';
+        document.getElementById('yesButton').style.marginRight = '8.25rem';
+        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 48;
+        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+        document.getElementById('noButton').style.left = `${x}px`;
+        document.getElementById('noButton').style.top = `${y}px`;
+      }
+      function nextPage() {
+        window.location.href = "yes.html";
+      }
+    </script>
+  </div>
+</body>
+</html>
