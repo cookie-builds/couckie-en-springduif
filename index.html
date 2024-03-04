@@ -14,21 +14,32 @@
   <img src="./pigeon.gif" alt="Cute animated illustration">
   <div class="button-group">
     <button id="yesButton" onclick="nextPage()">Yes</button>
-    <button id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+    <button id="noButton" onmouseover="moveButton()" onclick="clickNo()">No</button>
     <script>
       let count = 0;
       function moveButton() {
-        count += 1;
-        if (count === 10) {
-          document.getElementById('noButton').innerHTML = 'Also yes...';
-        }
-        if (count <= 10) {
+        if (count > 5 && count <= 10)
+          document.getElementById('noButton').innerHTML = 'Stop trying...';
+        else if (count > 10 && count <= 15)
+          document.getElementById('noButton').innerHTML = "It's not gonna work";
+        else if (count > 15 && count <= 20)
+          document.getElementById('noButton').innerHTML = "You know you want to";
+        else if (count > 20)
+          document.getElementById('noButton').innerHTML = "Also yes...";
+
+        if (count <= 20) {
           document.getElementById('noButton').style.position = 'absolute';
           document.getElementById('yesButton').style.marginRight = '8.25rem';
           var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth - 10) + 5;
           var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight - 10) + 5;
           document.getElementById('noButton').style.left = `${x}px`;
           document.getElementById('noButton').style.top = `${y}px`;
+        }
+        count += 1;
+      }
+      function clickNo() {
+        if (count > 15) {
+          nextPage();
         }
       }
       function nextPage() {
